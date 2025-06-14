@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth, UserRole } from '@/contexts/AuthContext';
@@ -29,6 +30,10 @@ const Register: React.FC = () => {
       ...prev,
       [e.target.name]: e.target.value
     }));
+  };
+
+  const handleRoleSelect = (role: UserRole) => {
+    setSelectedRole(role);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -99,8 +104,12 @@ const Register: React.FC = () => {
                 <Label className="text-base font-medium text-white">Select Your Role</Label>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div
-                    onClick={() => setSelectedRole('police')}
-                    className={`role-card ${selectedRole === 'police' ? 'selected' : ''}`}
+                    onClick={() => handleRoleSelect('police')}
+                    className={`bg-white rounded-lg p-4 border-2 cursor-pointer transition-all duration-200 hover:shadow-md ${
+                      selectedRole === 'police' 
+                        ? 'border-legal-indigo-500 bg-legal-blue-50 ring-2 ring-legal-indigo-500' 
+                        : 'border-legal-slate-200 hover:border-legal-indigo-300'
+                    }`}
                   >
                     <div className="flex items-center space-x-3">
                       <div className="bg-legal-indigo-100 rounded-full p-2">
@@ -114,8 +123,12 @@ const Register: React.FC = () => {
                   </div>
 
                   <div
-                    onClick={() => setSelectedRole('researcher')}
-                    className={`role-card ${selectedRole === 'researcher' ? 'selected' : ''}`}
+                    onClick={() => handleRoleSelect('researcher')}
+                    className={`bg-white rounded-lg p-4 border-2 cursor-pointer transition-all duration-200 hover:shadow-md ${
+                      selectedRole === 'researcher' 
+                        ? 'border-legal-indigo-500 bg-legal-blue-50 ring-2 ring-legal-indigo-500' 
+                        : 'border-legal-slate-200 hover:border-legal-indigo-300'
+                    }`}
                   >
                     <div className="flex items-center space-x-3">
                       <div className="bg-legal-teal-100 rounded-full p-2">
@@ -142,6 +155,7 @@ const Register: React.FC = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
+                    className="bg-white border-legal-slate-300 text-legal-slate-900"
                   />
                 </div>
 
@@ -155,6 +169,7 @@ const Register: React.FC = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
+                    className="bg-white border-legal-slate-300 text-legal-slate-900"
                   />
                 </div>
               </div>
@@ -171,7 +186,7 @@ const Register: React.FC = () => {
                       value={formData.password}
                       onChange={handleInputChange}
                       required
-                      className="pr-10"
+                      className="pr-10 bg-white border-legal-slate-300 text-legal-slate-900"
                     />
                     <button
                       type="button"
@@ -194,7 +209,7 @@ const Register: React.FC = () => {
                       value={formData.confirmPassword}
                       onChange={handleInputChange}
                       required
-                      className="pr-10"
+                      className="pr-10 bg-white border-legal-slate-300 text-legal-slate-900"
                     />
                     <button
                       type="button"
