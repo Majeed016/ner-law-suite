@@ -155,7 +155,7 @@ const Register: React.FC = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="bg-white border-legal-slate-300 text-legal-slate-900"
+                    className="bg-white border-legal-slate-300 text-legal-slate-900 placeholder:text-legal-slate-500"
                   />
                 </div>
 
@@ -169,7 +169,7 @@ const Register: React.FC = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="bg-white border-legal-slate-300 text-legal-slate-900"
+                    className="bg-white border-legal-slate-300 text-legal-slate-900 placeholder:text-legal-slate-500"
                   />
                 </div>
               </div>
@@ -186,7 +186,7 @@ const Register: React.FC = () => {
                       value={formData.password}
                       onChange={handleInputChange}
                       required
-                      className="pr-10 bg-white border-legal-slate-300 text-legal-slate-900"
+                      className="pr-10 bg-white border-legal-slate-300 text-legal-slate-900 placeholder:text-legal-slate-500"
                     />
                     <button
                       type="button"
@@ -209,7 +209,7 @@ const Register: React.FC = () => {
                       value={formData.confirmPassword}
                       onChange={handleInputChange}
                       required
-                      className="pr-10 bg-white border-legal-slate-300 text-legal-slate-900"
+                      className="pr-10 bg-white border-legal-slate-300 text-legal-slate-900 placeholder:text-legal-slate-500"
                     />
                     <button
                       type="button"
