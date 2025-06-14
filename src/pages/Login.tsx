@@ -42,7 +42,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-legal-slate-50 to-legal-indigo-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-legal-blue-50 to-legal-indigo-50 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center space-x-2 mb-4">
@@ -138,7 +138,7 @@ const Login: React.FC = () => {
         </Card>
 
         {/* Demo credentials */}
-        <Card className="mt-4 bg-legal-slate-100 border-legal-slate-200">
+        <Card className="mt-4 bg-legal-blue-100 border-legal-blue-200">
           <CardContent className="p-4">
             <h4 className="font-medium text-legal-slate-900 mb-2">Demo Credentials:</h4>
             <div className="space-y-1 text-sm text-legal-slate-700">

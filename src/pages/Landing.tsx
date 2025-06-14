@@ -39,7 +39,7 @@ const Landing: React.FC = () => {
                   </Button>
                 </Link>
                 <Link to="/login">
-                  <Button size="lg" variant="outline" className="btn-outline text-lg">
+                  <Button size="lg" className="bg-legal-blue-600 hover:bg-legal-blue-700 text-white text-lg px-8 py-4">
                     Login
                   </Button>
                 </Link>
@@ -84,7 +84,7 @@ const Landing: React.FC = () => {
               </div>
               
               {/* Enhanced Floating elements */}
-              <div className="absolute -top-4 -right-4 bg-legal-gold-500 rounded-full p-3 shadow-lg animate-bounce">
+              <div className="absolute -top-4 -right-4 bg-legal-blue-500 rounded-full p-3 shadow-lg animate-bounce">
                 <Gavel className="h-6 w-6 text-white" />
               </div>
               <div className="absolute -bottom-4 -left-4 bg-legal-teal-500 rounded-full p-3 shadow-lg">
@@ -112,7 +112,7 @@ const Landing: React.FC = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Police Officer Features */}
-            <Card className="legal-card group">
+            <Card className="legal-card group bg-legal-blue-50 border-legal-blue-200">
               <CardContent>
                 <div className="flex items-center space-x-4 mb-6">
                   <div className="bg-legal-indigo-100 rounded-full p-4 group-hover:bg-legal-indigo-200 transition-colors">
@@ -145,7 +145,7 @@ const Landing: React.FC = () => {
             </Card>
 
             {/* Legal Researcher Features */}
-            <Card className="legal-card group">
+            <Card className="legal-card group bg-legal-blue-50 border-legal-blue-200">
               <CardContent>
                 <div className="flex items-center space-x-4 mb-6">
                   <div className="bg-legal-teal-100 rounded-full p-4 group-hover:bg-legal-teal-200 transition-colors">
@@ -194,7 +194,7 @@ const Landing: React.FC = () => {
               <CardContent>
                 <div className="flex items-center mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="h-5 w-5 text-legal-blue-500 fill-current" />
                   ))}
                 </div>
                 <blockquote className="text-lg text-legal-slate-700 mb-6 italic leading-relaxed">
@@ -216,7 +216,7 @@ const Landing: React.FC = () => {
               <CardContent>
                 <div className="flex items-center mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="h-5 w-5 text-legal-blue-500 fill-current" />
                   ))}
                 </div>
                 <blockquote className="text-lg text-legal-slate-700 mb-6 italic leading-relaxed">

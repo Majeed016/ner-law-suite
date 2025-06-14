@@ -74,7 +74,7 @@ const Register: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-legal-slate-50 to-legal-indigo-50 py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-legal-blue-50 to-legal-indigo-50 py-8 px-4">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center space-x-2 mb-4">
