@@ -43,14 +43,14 @@ const Login: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-legal-blue-50 to-legal-indigo-50 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
-        <div className="text-center mb-8 bg-legal-blue-100 p-6 rounded-xl">
+        <div className="text-center mb-8 bg-legal-blue-500 p-6 rounded-xl">
           <Link to="/" className="inline-flex items-center space-x-2 mb-4">
-            <Scale className="h-8 w-8 text-legal-indigo-600" />
-            <span className="text-2xl font-bold text-legal-slate-900">Legal NER Suite</span>
+            <Scale className="h-8 w-8 text-white" />
+            <span className="text-2xl font-bold text-white">Legal NER Suite</span>
           </Link>
         </div>
 
-        <Card className="legal-card bg-legal-blue-50 border-legal-blue-200">
+        <Card className="legal-card bg-white border-legal-blue-200">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl font-bold text-legal-slate-900">
               Login to Legal NER Suite
@@ -61,7 +61,7 @@ const Login: React.FC = () => {
           </CardHeader>
 
           <form onSubmit={handleSubmit}>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-4 bg-white">
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
@@ -71,7 +71,7 @@ const Login: React.FC = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full"
+                  className="w-full bg-white"
                 />
               </div>
 
@@ -85,7 +85,7 @@ const Login: React.FC = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                    className="w-full pr-10"
+                    className="w-full pr-10 bg-white"
                   />
                   <button
                     type="button"
@@ -119,7 +119,7 @@ const Login: React.FC = () => {
                     <span>Logging in...</span>
                   </div>
                 ) : (
-                  <span className="text-blue-600">Login</span>
+                  <span className="text-white">Login</span>
                 )}
               </Button>
 

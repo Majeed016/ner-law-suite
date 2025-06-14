@@ -82,12 +82,12 @@ const Register: React.FC = () => {
           </Link>
         </div>
 
-        <Card className="legal-card">
+        <Card className="legal-card bg-legal-blue-500 border-legal-blue-600">
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl font-bold text-legal-slate-900">
+            <CardTitle className="text-2xl font-bold text-white">
               Create Account
             </CardTitle>
-            <CardDescription className="text-legal-slate-600">
+            <CardDescription className="text-legal-blue-100">
               Join thousands of legal professionals using AI-powered tools
             </CardDescription>
           </CardHeader>
@@ -96,7 +96,7 @@ const Register: React.FC = () => {
             <CardContent className="space-y-6">
               {/* Role Selection */}
               <div className="space-y-3">
-                <Label className="text-base font-medium">Select Your Role</Label>
+                <Label className="text-base font-medium text-white">Select Your Role</Label>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div
                     onClick={() => setSelectedRole('police')}
@@ -133,7 +133,7 @@ const Register: React.FC = () => {
               {/* Form Fields */}
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="name">Full Name</Label>
+                  <Label htmlFor="name" className="text-white">Full Name</Label>
                   <Input
                     id="name"
                     name="name"
@@ -146,7 +146,7 @@ const Register: React.FC = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="email" className="text-white">Email</Label>
                   <Input
                     id="email"
                     name="email"
@@ -161,7 +161,7 @@ const Register: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="password">Password</Label>
+                  <Label htmlFor="password" className="text-white">Password</Label>
                   <div className="relative">
                     <Input
                       id="password"
@@ -184,7 +184,7 @@ const Register: React.FC = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="confirmPassword">Confirm Password</Label>
+                  <Label htmlFor="confirmPassword" className="text-white">Confirm Password</Label>
                   <div className="relative">
                     <Input
                       id="confirmPassword"
@@ -220,15 +220,15 @@ const Register: React.FC = () => {
                     <span>Creating Account...</span>
                   </div>
                 ) : (
-                  <span className="text-blue-600">Create Account</span>
+                  <span className="text-white">Create Account</span>
                 )}
               </Button>
 
-              <p className="text-center text-sm text-legal-slate-600">
+              <p className="text-center text-sm text-legal-blue-100">
                 Already have an account?{' '}
                 <Link 
                   to="/login" 
-                  className="text-legal-indigo-600 hover:text-legal-indigo-700 font-medium hover:underline"
+                  className="text-white hover:text-legal-blue-200 font-medium hover:underline"
                 >
                   Login
                 </Link>
