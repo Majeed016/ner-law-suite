@@ -57,22 +57,6 @@ export interface NERResponse {
 }
 
 class ApiService {
-  private async request<T>(endpoint: string, options?: RequestInit): Promise<T> {
-    const response = await fetch(`${API_BASE_URL}${endpoint}`, {
-      headers: {
-        'Content-Type': 'application/json',
-        ...options?.headers,
-      },
-      ...options,
-    });
-
-    if (!response.ok) {
-      throw new Error(`API Error: ${response.status} ${response.statusText}`);
-    }
-
-    return response.json();
-  }
-
   // Authentication
   async login(username: string, password: string) {
     const formData = new FormData();
@@ -82,7 +66,12 @@ class ApiService {
     const response = await fetch(`${API_BASE_URL}/login`, {
       method: 'POST',
       body: formData,
+      credentials: 'include',
     });
+
+    if (!response.ok) {
+      throw new Error(`Login failed: ${response.statusText}`);
+    }
 
     return response.json();
   }
@@ -98,6 +87,10 @@ class ApiService {
       body: formData,
     });
 
+    if (!response.ok) {
+      throw new Error(`Registration failed: ${response.statusText}`);
+    }
+
     return response.json();
   }
 
@@ -106,6 +99,11 @@ class ApiService {
       method: 'GET',
       credentials: 'include',
     });
+    
+    if (!response.ok) {
+      throw new Error(`Logout failed: ${response.statusText}`);
+    }
+    
     return response.json();
   }
 
