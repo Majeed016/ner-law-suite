@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,45 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Legal NER Suite Professional Color Palette
+				legal: {
+					indigo: {
+						50: '#eef2ff',
+						100: '#e0e7ff',
+						500: '#6366f1',
+						600: '#4f46e5',
+						700: '#4338ca',
+						900: '#312e81'
+					},
+					teal: {
+						50: '#f0fdfa',
+						100: '#ccfbf1',
+						500: '#14b8a6',
+						600: '#0d9488',
+						700: '#0f766e'
+					},
+					gold: {
+						500: '#f59e0b',
+						600: '#d97706',
+						700: '#b45309'
+					},
+					navy: {
+						700: '#1e3a8a',
+						800: '#1e40af',
+						900: '#1e293b'
+					},
+					slate: {
+						50: '#f8fafc',
+						100: '#f1f5f9',
+						200: '#e2e8f0',
+						300: '#cbd5e1',
+						500: '#64748b',
+						600: '#475569',
+						700: '#334155',
+						800: '#1e293b',
+						900: '#0f172a'
+					}
 				}
 			},
 			borderRadius: {
@@ -84,11 +124,35 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'pulse-glow': {
+					'0%, 100%': {
+						boxShadow: '0 0 5px rgba(99, 102, 241, 0.3)'
+					},
+					'50%': {
+						boxShadow: '0 0 20px rgba(99, 102, 241, 0.6)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.6s ease-out',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite'
+			},
+			fontFamily: {
+				'inter': ['Inter', 'sans-serif'],
+				'lato': ['Lato', 'sans-serif']
 			}
 		}
 	},
