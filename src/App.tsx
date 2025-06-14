@@ -13,9 +13,6 @@ import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
-import FirAssistant from "./pages/FirAssistant";
-import LegalResearch from "./pages/LegalResearch";
-import CasePrediction from "./pages/CasePrediction";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -41,11 +38,17 @@ const App = () => (
                   </ProtectedRoute>
                 } 
               />
+              {/* Placeholder routes for future implementation */}
               <Route 
                 path="/fir-assistant" 
                 element={
                   <ProtectedRoute allowedRoles={['police']}>
-                    <FirAssistant />
+                    <div className="min-h-screen bg-legal-slate-50 flex items-center justify-center">
+                      <div className="text-center">
+                        <h1 className="text-2xl font-bold text-legal-slate-900 mb-4">FIR Assistant</h1>
+                        <p className="text-legal-slate-600">Coming soon - AI-powered FIR drafting tool</p>
+                      </div>
+                    </div>
                   </ProtectedRoute>
                 } 
               />
@@ -53,7 +56,12 @@ const App = () => (
                 path="/legal-research" 
                 element={
                   <ProtectedRoute allowedRoles={['researcher']}>
-                    <LegalResearch />
+                    <div className="min-h-screen bg-legal-slate-50 flex items-center justify-center">
+                      <div className="text-center">
+                        <h1 className="text-2xl font-bold text-legal-slate-900 mb-4">Legal Research</h1>
+                        <p className="text-legal-slate-600">Coming soon - Case search and analysis tool</p>
+                      </div>
+                    </div>
                   </ProtectedRoute>
                 } 
               />
@@ -61,7 +69,12 @@ const App = () => (
                 path="/case-prediction" 
                 element={
                   <ProtectedRoute allowedRoles={['researcher']}>
-                    <CasePrediction />
+                    <div className="min-h-screen bg-legal-slate-50 flex items-center justify-center">
+                      <div className="text-center">
+                        <h1 className="text-2xl font-bold text-legal-slate-900 mb-4">Case Prediction</h1>
+                        <p className="text-legal-slate-600">Coming soon - BNS/IPC section prediction tool</p>
+                      </div>
+                    </div>
                   </ProtectedRoute>
                 } 
               />

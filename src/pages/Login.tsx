@@ -1,17 +1,18 @@
 
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { AlertCircle, Scale } from 'lucide-react';
-import { useAuth } from '@/contexts/AuthContext';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Scale, Eye, EyeOff } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Login: React.FC = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   
   const { login } = useAuth();
@@ -23,17 +24,17 @@ const Login: React.FC = () => {
     setIsLoading(true);
 
     try {
-      await login(username, password);
+      await login(email, password);
       toast({
         title: "Welcome back!",
-        description: "You have been successfully logged in.",
-        className: "bg-white border-green-200 text-green-800",
+        description: "Successfully logged in to Legal NER Suite.",
+        className: "bg-white border-legal-blue-200",
       });
       navigate('/dashboard');
     } catch (error) {
       toast({
-        title: "Login Failed",
-        description: error instanceof Error ? error.message : "Invalid credentials",
+        title: "Login failed",
+        description: "Please check your credentials and try again.",
         variant: "destructive",
       });
     } finally {
@@ -42,75 +43,113 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-legal-blue-50 to-white flex items-center justify-center px-4">
-      <Card className="w-full max-w-md legal-card">
-        <CardHeader className="text-center">
-          <div className="mx-auto mb-4 p-3 bg-legal-blue-100 rounded-full w-fit">
-            <Scale className="h-8 w-8 text-legal-blue-600" />
-          </div>
-          <CardTitle className="text-2xl font-bold text-legal-slate-900">Welcome Back</CardTitle>
-          <CardDescription className="text-legal-slate-600">
-            Sign in to access the Legal NER Suite
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="username">Username</Label>
-              <Input
-                id="username"
-                type="text"
-                placeholder="Enter your username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                required
-                disabled={isLoading}
-              />
-            </div>
-            
-            <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
-              <Input
-                id="password"
-                type="password"
-                placeholder="Enter your password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                disabled={isLoading}
-              />
-            </div>
+    <div className="min-h-screen bg-gradient-to-br from-legal-blue-50 to-legal-indigo-50 flex items-center justify-center p-4">
+      <div className="w-full max-w-md">
+        <div className="text-center mb-8 bg-legal-blue-500 p-6 rounded-xl">
+          <Link to="/" className="inline-flex items-center space-x-2 mb-4">
+            <Scale className="h-8 w-8 text-white" />
+            <span className="text-2xl font-bold text-white">Legal NER Suite</span>
+          </Link>
+        </div>
 
-            <Button 
-              type="submit" 
-              className="w-full btn-primary"
-              disabled={isLoading}
-            >
-              {isLoading ? 'Signing in...' : 'Sign In'}
-            </Button>
-          </form>
+        <Card className="legal-card bg-white border-legal-blue-200">
+          <CardHeader className="text-center">
+            <CardTitle className="text-2xl font-bold text-legal-slate-900">
+              Login to Legal NER Suite
+            </CardTitle>
+            <CardDescription className="text-legal-slate-600">
+              Access your professional legal tools
+            </CardDescription>
+          </CardHeader>
 
-          <div className="mt-6 text-center">
-            <p className="text-sm text-legal-slate-600">
-              Don't have an account?{' '}
-              <Link to="/register" className="text-legal-blue-600 hover:text-legal-blue-500 font-medium">
-                Sign up here
-              </Link>
-            </p>
-          </div>
-
-          <div className="mt-4 p-3 bg-legal-blue-50 rounded-lg">
-            <div className="flex items-start space-x-2">
-              <AlertCircle className="h-4 w-4 text-legal-blue-600 mt-0.5" />
-              <div className="text-xs text-legal-blue-700">
-                <p className="font-medium mb-1">Demo Credentials:</p>
-                <p>Police Officer: officer / password</p>
-                <p>Researcher: researcher / password</p>
+          <form onSubmit={handleSubmit}>
+            <CardContent className="space-y-4 bg-white">
+              <div className="space-y-2">
+                <Label htmlFor="email">Email</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="w-full bg-white border-black placeholder:text-legal-slate-500"
+                />
               </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="password">Password</Label>
+                <div className="relative">
+                  <Input
+                    id="password"
+                    type={showPassword ? 'text' : 'password'}
+                    placeholder="Enter your password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    className="w-full pr-10 bg-white border-black placeholder:text-legal-slate-500"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-legal-slate-500 hover:text-legal-slate-700"
+                  >
+                    {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                  </button>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <Link 
+                  to="/forgot-password" 
+                  className="text-sm text-legal-indigo-600 hover:text-legal-indigo-700 hover:underline"
+                >
+                  Forgot password?
+                </Link>
+              </div>
+            </CardContent>
+
+            <CardFooter className="flex flex-col space-y-4">
+              <Button 
+                type="submit" 
+                className="btn-primary w-full" 
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <div className="flex items-center space-x-2">
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                    <span>Logging in...</span>
+                  </div>
+                ) : (
+                  <span className="text-white">Login</span>
+                )}
+              </Button>
+
+              <p className="text-center text-sm text-legal-slate-600">
+                Don't have an account?{' '}
+                <Link 
+                  to="/register" 
+                  className="text-legal-indigo-600 hover:text-legal-indigo-700 font-medium hover:underline"
+                >
+                  Create Account
+                </Link>
+              </p>
+            </CardFooter>
+          </form>
+        </Card>
+
+        {/* Demo credentials */}
+        <Card className="mt-4 bg-legal-blue-100 border-legal-blue-200">
+          <CardContent className="p-4">
+            <h4 className="font-medium text-legal-slate-900 mb-2">Demo Credentials:</h4>
+            <div className="space-y-1 text-sm text-legal-slate-700">
+              <p><strong>Police Officer:</strong> officer@demo.com</p>
+              <p><strong>Legal Researcher:</strong> researcher@demo.com</p>
+              <p><strong>Password:</strong> demo123</p>
             </div>
-          </div>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 };
