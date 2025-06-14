@@ -34,7 +34,7 @@ const Landing: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Link to="/register">
                   <Button size="lg" className="btn-primary text-lg group">
-                    Get Started
+                    <span className="text-blue-600">Get Started</span>
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
@@ -248,7 +248,7 @@ const Landing: React.FC = () => {
           </p>
           <Link to="/register">
             <Button size="lg" className="bg-white text-legal-indigo-600 hover:bg-legal-slate-50 text-lg px-12 py-4 group">
-              Get Started Today
+              <span className="text-blue-600">Get Started Today</span>
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>

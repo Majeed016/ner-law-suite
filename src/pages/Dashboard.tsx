@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -97,7 +96,7 @@ const Dashboard: React.FC = () => {
 
         {/* Enhanced Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <Card className="stat-card group">
+          <Card className="stat-card group bg-legal-blue-100 border-legal-blue-200">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -105,14 +104,14 @@ const Dashboard: React.FC = () => {
                   <p className="text-3xl font-bold text-legal-slate-900">24</p>
                   <p className="text-sm text-green-600 font-medium">+12% this month</p>
                 </div>
-                <div className="bg-legal-blue-100 rounded-full p-3 group-hover:bg-legal-blue-200 transition-colors">
+                <div className="bg-legal-blue-200 rounded-full p-3 group-hover:bg-legal-blue-300 transition-colors">
                   <Activity className="h-8 w-8 text-legal-blue-600 icon-hover" />
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="stat-card group">
+          <Card className="stat-card group bg-legal-blue-100 border-legal-blue-200">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -122,14 +121,14 @@ const Dashboard: React.FC = () => {
                   <p className="text-3xl font-bold text-legal-slate-900">156</p>
                   <p className="text-sm text-green-600 font-medium">+8% this week</p>
                 </div>
-                <div className="bg-legal-teal-100 rounded-full p-3 group-hover:bg-legal-teal-200 transition-colors">
-                  <FileText className="h-8 w-8 text-legal-teal-600 icon-hover" />
+                <div className="bg-legal-blue-200 rounded-full p-3 group-hover:bg-legal-blue-300 transition-colors">
+                  <FileText className="h-8 w-8 text-legal-blue-600 icon-hover" />
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="stat-card group">
+          <Card className="stat-card group bg-legal-blue-100 border-legal-blue-200">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -137,8 +136,8 @@ const Dashboard: React.FC = () => {
                   <p className="text-3xl font-bold text-legal-slate-900">94%</p>
                   <p className="text-sm text-green-600 font-medium">Excellent performance</p>
                 </div>
-                <div className="bg-green-100 rounded-full p-3 group-hover:bg-green-200 transition-colors">
-                  <Target className="h-8 w-8 text-green-600 icon-hover" />
+                <div className="bg-legal-blue-200 rounded-full p-3 group-hover:bg-legal-blue-300 transition-colors">
+                  <Target className="h-8 w-8 text-legal-blue-600 icon-hover" />
                 </div>
               </div>
             </CardContent>
@@ -156,7 +155,7 @@ const Dashboard: React.FC = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="legal-card group border-0 shadow-lg">
+              <Card key={index} className="legal-card group border-0 shadow-lg bg-legal-blue-100 border-legal-blue-200">
                 <CardHeader className="pb-4">
                   <div className="flex items-center space-x-6">
                     <div className={`rounded-xl p-4 ${feature.color} ${feature.hoverColor} transition-colors`}>
@@ -175,7 +174,7 @@ const Dashboard: React.FC = () => {
                 <CardContent className="pt-0">
                   <Link to={feature.link}>
                     <Button className="btn-primary w-full group">
-                      Get Started
+                      <span className="text-blue-600">Get Started</span>
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </Link>
@@ -195,7 +194,7 @@ const Dashboard: React.FC = () => {
             </Button>
           </div>
           
-          <Card className="stat-card border-0 shadow-lg">
+          <Card className="stat-card border-0 shadow-lg bg-legal-blue-100 border-legal-blue-200">
             <CardContent className="p-8">
               <div className="space-y-6">
                 {recentActivities.map((activity, index) => (

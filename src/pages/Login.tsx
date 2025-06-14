@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
@@ -44,14 +43,14 @@ const Login: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-legal-blue-50 to-legal-indigo-50 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 bg-legal-blue-100 p-6 rounded-xl">
           <Link to="/" className="inline-flex items-center space-x-2 mb-4">
             <Scale className="h-8 w-8 text-legal-indigo-600" />
             <span className="text-2xl font-bold text-legal-slate-900">Legal NER Suite</span>
           </Link>
         </div>
 
-        <Card className="legal-card">
+        <Card className="legal-card bg-legal-blue-50 border-legal-blue-200">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl font-bold text-legal-slate-900">
               Login to Legal NER Suite
@@ -120,7 +119,7 @@ const Login: React.FC = () => {
                     <span>Logging in...</span>
                   </div>
                 ) : (
-                  'Login'
+                  <span className="text-blue-600">Login</span>
                 )}
               </Button>
 

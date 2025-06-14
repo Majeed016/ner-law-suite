@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth, UserRole } from '@/contexts/AuthContext';
@@ -221,7 +220,7 @@ const Register: React.FC = () => {
                     <span>Creating Account...</span>
                   </div>
                 ) : (
-                  'Create Account'
+                  <span className="text-blue-600">Create Account</span>
                 )}
               </Button>
 
