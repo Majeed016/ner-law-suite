@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -188,7 +189,7 @@ const Dashboard: React.FC = () => {
         <div className="mt-12">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-3xl font-bold text-legal-slate-900">Recent Activity</h2>
-            <Button variant="outline" className="text-legal-slate-600 hover:text-legal-indigo-600">
+            <Button className="bg-blue-600 text-white hover:bg-blue-700">
               View All
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>

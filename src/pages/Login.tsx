@@ -28,6 +28,7 @@ const Login: React.FC = () => {
       toast({
         title: "Welcome back!",
         description: "Successfully logged in to Legal NER Suite.",
+        className: "bg-white border-legal-blue-200",
       });
       navigate('/dashboard');
     } catch (error) {
