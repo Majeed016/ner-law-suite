@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -142,7 +141,7 @@
 
   .entity-tag.date {
     @apply bg-teal-100 text-teal-800 hover:bg-teal-200;
-  ]
+  }
 
   .entity-tag.location {
     @apply bg-legal-blue-100 text-legal-blue-800 hover:bg-legal-blue-200;
