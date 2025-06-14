@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -62,7 +63,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Legal NER Suite Professional Color Palette
+				// Legal NER Suite Professional Color Palette - All Blue Theme
 				legal: {
 					indigo: {
 						50: '#eef2ff',
@@ -105,12 +106,12 @@ export default {
 						900: '#0f172a'
 					}
 				},
-				// Additional neutral backgrounds for better readability
+				// Additional blue-based neutral backgrounds
 				neutral: {
-					50: '#f5f7fa',
-					100: '#eaf0f6',
-					200: '#d4e2f0',
-					300: '#b8d0e6'
+					50: '#f0f8ff',
+					100: '#e6f3ff',
+					200: '#cce7ff',
+					300: '#b3dbff'
 				}
 			},
 			borderRadius: {
