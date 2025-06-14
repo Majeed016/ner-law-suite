@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
@@ -71,7 +72,7 @@ const Login: React.FC = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full bg-white"
+                  className="w-full bg-white border-black placeholder:text-legal-slate-500"
                 />
               </div>
 
@@ -85,7 +86,7 @@ const Login: React.FC = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                    className="w-full pr-10 bg-white"
+                    className="w-full pr-10 bg-white border-black placeholder:text-legal-slate-500"
                   />
                   <button
                     type="button"
