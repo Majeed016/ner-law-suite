@@ -113,11 +113,11 @@
   }
 
   .legal-card {
-    @apply bg-white rounded-xl shadow-lg border border-legal-slate-200 hover:shadow-xl transition-all duration-300;
+    @apply bg-white rounded-xl shadow-md border border-legal-slate-200 hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1 p-8;
   }
 
   .role-card {
-    @apply legal-card p-6 hover:scale-105 cursor-pointer;
+    @apply legal-card hover:scale-105;
   }
 
   .role-card.selected {
@@ -125,38 +125,96 @@
   }
 
   .probability-bar {
-    @apply h-2 rounded-full bg-gradient-to-r transition-all duration-1000 ease-out;
+    @apply h-3 rounded-full bg-gradient-to-r transition-all duration-1000 ease-out;
   }
 
   .entity-tag {
-    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium cursor-pointer hover:opacity-80 transition-opacity;
   }
 
   .entity-tag.person {
-    @apply bg-blue-100 text-blue-800;
+    @apply bg-blue-100 text-blue-800 hover:bg-blue-200;
   }
 
   .entity-tag.statute {
-    @apply bg-purple-100 text-purple-800;
+    @apply bg-purple-100 text-purple-800 hover:bg-purple-200;
   }
 
   .entity-tag.date {
-    @apply bg-green-100 text-green-800;
+    @apply bg-green-100 text-green-800 hover:bg-green-200;
   }
 
   .entity-tag.location {
-    @apply bg-orange-100 text-orange-800;
+    @apply bg-orange-100 text-orange-800 hover:bg-orange-200;
   }
 
   .btn-primary {
-    @apply bg-legal-indigo-600 hover:bg-legal-indigo-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors duration-200 shadow-md hover:shadow-lg;
+    @apply bg-legal-indigo-600 hover:bg-legal-indigo-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
   }
 
   .btn-secondary {
-    @apply bg-legal-teal-600 hover:bg-legal-teal-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors duration-200;
+    @apply bg-legal-teal-600 hover:bg-legal-teal-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200 transform hover:-translate-y-0.5;
   }
 
   .btn-outline {
-    @apply border-2 border-legal-indigo-600 text-legal-indigo-600 hover:bg-legal-indigo-600 hover:text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-200;
+    @apply border-2 border-legal-indigo-600 text-legal-indigo-600 hover:bg-legal-indigo-600 hover:text-white px-8 py-3 rounded-lg font-medium transition-all duration-200 transform hover:-translate-y-0.5;
+  }
+
+  .stat-card {
+    @apply bg-white rounded-xl shadow-md border border-legal-slate-200 hover:shadow-lg transition-all duration-300 p-6;
+  }
+
+  .court-badge {
+    @apply inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-legal-slate-100 text-legal-slate-700;
+  }
+
+  .section-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-legal-indigo-100 text-legal-indigo-800 hover:bg-legal-indigo-200 cursor-pointer transition-colors;
+  }
+
+  .toast-success {
+    @apply bg-green-50 border-green-200 text-green-800;
+  }
+
+  .toast-error {
+    @apply bg-red-50 border-red-200 text-red-800;
+  }
+
+  .icon-hover {
+    @apply transition-transform duration-200 hover:scale-110;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .slide-in {
+    animation: slideIn 0.4s ease-out;
+  }
+
+  .skeleton {
+    @apply animate-pulse bg-legal-slate-200 rounded;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

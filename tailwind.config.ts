@@ -101,6 +101,13 @@ export default {
 						800: '#1e293b',
 						900: '#0f172a'
 					}
+				},
+				// Additional neutral backgrounds for better readability
+				neutral: {
+					50: '#f5f7fa',
+					100: '#eaf0f6',
+					200: '#d4e2f0',
+					300: '#b8d0e6'
 				}
 			},
 			borderRadius: {
@@ -142,13 +149,22 @@ export default {
 					'50%': {
 						boxShadow: '0 0 20px rgba(99, 102, 241, 0.6)'
 					}
+				},
+				'bounce-gentle': {
+					'0%, 100%': {
+						transform: 'translateY(0)',
+					},
+					'50%': {
+						transform: 'translateY(-10px)',
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out',
-				'pulse-glow': 'pulse-glow 2s ease-in-out infinite'
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite'
 			},
 			fontFamily: {
 				'inter': ['Inter', 'sans-serif'],
