@@ -141,8 +141,8 @@
   }
 
   .entity-tag.date {
-    @apply bg-green-100 text-green-800 hover:bg-green-200;
-  }
+    @apply bg-teal-100 text-teal-800 hover:bg-teal-200;
+  ]
 
   .entity-tag.location {
     @apply bg-legal-blue-100 text-legal-blue-800 hover:bg-legal-blue-200;
@@ -173,7 +173,7 @@
   }
 
   .toast-success {
-    @apply bg-green-50 border-green-200 text-green-800;
+    @apply bg-teal-50 border-teal-200 text-teal-800;
   }
 
   .toast-error {
