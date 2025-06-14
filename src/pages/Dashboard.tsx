@@ -34,8 +34,8 @@ const Dashboard: React.FC = () => {
       title: 'Case Prediction',
       description: 'Predict applicable BNS and IPC sections with confidence scores',
       link: '/case-prediction',
-      color: 'bg-purple-100 text-purple-600',
-      hoverColor: 'group-hover:bg-purple-200'
+      color: 'bg-legal-blue-100 text-legal-blue-600',
+      hoverColor: 'group-hover:bg-legal-blue-200'
     }
   ];
 
@@ -64,7 +64,7 @@ const Dashboard: React.FC = () => {
       time: '1 day ago',
       status: 'PDF, JSON',
       court: user?.role === 'police' ? '' : 'District Court',
-      color: 'bg-green-100 text-green-600'
+      color: 'bg-legal-blue-100 text-legal-blue-600'
     }
   ];
 
@@ -105,8 +105,8 @@ const Dashboard: React.FC = () => {
                   <p className="text-3xl font-bold text-legal-slate-900">24</p>
                   <p className="text-sm text-green-600 font-medium">+12% this month</p>
                 </div>
-                <div className="bg-blue-100 rounded-full p-3 group-hover:bg-blue-200 transition-colors">
-                  <Activity className="h-8 w-8 text-blue-600 icon-hover" />
+                <div className="bg-legal-blue-100 rounded-full p-3 group-hover:bg-legal-blue-200 transition-colors">
+                  <Activity className="h-8 w-8 text-legal-blue-600 icon-hover" />
                 </div>
               </div>
             </CardContent>

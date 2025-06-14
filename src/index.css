@@ -145,7 +145,7 @@
   }
 
   .entity-tag.location {
-    @apply bg-orange-100 text-orange-800 hover:bg-orange-200;
+    @apply bg-legal-blue-100 text-legal-blue-800 hover:bg-legal-blue-200;
   }
 
   .btn-primary {
